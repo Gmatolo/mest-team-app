@@ -20,6 +20,8 @@ a {
 .card-list {
     display: flex;
     padding: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     overflow-x: scroll;
 }
 
@@ -77,16 +79,16 @@ a {
 
 .card:focus-within~.card,
 .card:hover~.card {
-    transform: translateX(130px);
+    transform: translateX(10px);
 }
 
 .card:hover {
     transform: translateY(-1rem);
 }
 
-.card:not(:first-child) {
+/* .card:not(:first-child) {
     margin-left: -130px;
-}
+} */
 
 
 .card-header {
@@ -237,13 +239,13 @@ a {
     content: "<contact>"
 }
 
-.skills-details {
+.skills-section {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
+    margin-left: 100px;
 }
 
-.skill-section {
-    margin-left: 50px;
-}
 
 /* .blog-section {
     margin-left: 50px;
@@ -286,9 +288,7 @@ a {
 }
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-   
-}
+@media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
