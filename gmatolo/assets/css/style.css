@@ -274,7 +274,7 @@ a {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    margin-left: 135px;
+    margin-left: 10px;
 }
 
 
@@ -285,27 +285,35 @@ a {
 
 .chart {
     margin-bottom: 2rem;
+    width: 70vw;
+    margin-right: 10px;
+    justify-content: center;
+    width: 80vw;
 }
 
 .chart footer {
     background-color: #373737;
     height: 2px;
+    width: 80vw;
 }
 
 .chart span {
     font-size: 18px;
     margin-bottom: 7px;
     display: block;
+    width: 80vw;
 }
 
 .chart-1 {
     background: rgb(255, 34, 83);
+    width: 80vw;
 }
 
 .chart footer div {
     height: 100%;
     background-color: #08fdd8;
     transition: width 1.3s ease-out;
+    width: 80vw;
 }
 
 @media (max-width:481px) {
