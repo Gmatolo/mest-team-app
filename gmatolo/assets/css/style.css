@@ -73,12 +73,13 @@ a {
 
 .about-me {
     display: flex;
+    width: 100%;
 }
 
 .about-me-card {
     height: 350px;
-    width: 100%;
-    min-width: 800px;
+    width: 80vw;
+    min-width: 300px;
     padding: 1.5rem;
     border-radius: 16px;
     background: #17141d;
@@ -214,29 +215,46 @@ a {
 .home {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     padding: 1.5rem;
+}
+
+.img-home {
+    justify-content: flex-start;
+}
+
+.welcome-message {
+    justify-content: center;
 }
 
 .about-tag {
     color: #ff8a00;
     margin-bottom: 0px;
+    margin-left: 100px;
 }
 
 .skills-tag {
-    color: #ff8a00
+    color: #ff8a00;
+    margin-left: 100px;
 }
 
 .blog-tag {
-    color: #ff8a00
+    color: #ff8a00;
+    margin-left: 50px;
 }
 
 .contact-tag {
-    color: #ff8a00
+    color: #ff8a00;
+    margin-left: 50px;
 }
 
 .about-tag:after {
     content: "<about>"
 
+}
+
+.navbar {
+    color: white;
 }
 
 
@@ -255,8 +273,8 @@ a {
 .skills-section {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
-    margin-left: 100px;
+    width: 80vw;
+    margin-left: 135px;
 }
 
 
@@ -290,25 +308,34 @@ a {
     transition: width 1.3s ease-out;
 }
 
+@media (max-width:481px) {
+    .img-home {
+        width: 100%;
+    }
+
+    .welcome-message {
+        width: 100%;
+    }
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    ...
+    .img-home {
+        width: 100%;
+    }
+
+    .welcome-message {
+        width: 100%;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-    ...
-}
+    .img-home {
+        width: 50%;
+    }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
-
-/* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    ...
-}
-
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-    ...
+    .welcome-message {
+        width: 50%;
+    }
 }
