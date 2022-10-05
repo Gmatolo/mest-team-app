@@ -3,7 +3,7 @@
 body {
     padding: 0;
     margin: 0;
-    margin-top: 5rem;
+    /* margin-top: 0rem; */
     background-color: #17141d;
     color: white;
     font-family: 'DM Mono', monospace;
@@ -19,6 +19,22 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background: #201c29;
+}
+
+.navbar {
+    color: #08fdd8;
+    padding: 0.5px;
+    margin: 2px;
+    border-radius: 10px;
+    background: #d4c9eb;
+    box-shadow: -1rem 0 3rem #000;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 a {
@@ -233,10 +249,6 @@ a {
     margin-left: 100px;
 }
 
-.skills-tag {
-    color: #ff8a00;
-    margin-left: 100px;
-}
 
 .blog-tag {
     color: #ff8a00;
@@ -253,10 +265,6 @@ a {
 
 }
 
-.navbar {
-    color: white;
-}
-
 
 .skills-tag:after {
     content: "<skills>"
@@ -270,11 +278,17 @@ a {
     content: "<contact>"
 }
 
-.skills-section {
+c .skills-section {
     display: flex;
     flex-direction: column;
     width: 80vw;
-    margin-left: 10px;
+    margin-left: 80px;
+}
+
+.skills-tag {
+    color: #ff8a00;
+    margin-left: 100px;
+    justify-content: flex-end;
 }
 
 
@@ -285,7 +299,7 @@ a {
 
 .chart {
     margin-bottom: 2rem;
-    width: 70vw;
+    width: 80vw;
     margin-right: 10px;
     justify-content: center;
     width: 80vw;
@@ -309,11 +323,25 @@ a {
     width: 80vw;
 }
 
+.site-footer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
 .chart footer div {
     height: 100%;
     background-color: #08fdd8;
     transition: width 1.3s ease-out;
     width: 80vw;
+}
+
+.site-footer, .chart {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff8a00;
 }
 
 @media (max-width:481px) {
@@ -324,6 +352,7 @@ a {
     .welcome-message {
         width: 100%;
     }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -335,6 +364,7 @@ a {
     .welcome-message {
         width: 100%;
     }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -346,4 +376,5 @@ a {
     .welcome-message {
         width: 50%;
     }
+
 }
