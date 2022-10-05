@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    /* margin-top: 0rem; */
+    background-color: #17141d;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #2d2838;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #1e1e;
+}
+
+.navbar {
+    color: #08fdd8;
+    padding: 0.5px;
+    margin: 2px;
+    border-radius: 10px;
+    background: linear-gradient(29deg, black, transparent);
+    box-shadow: -1rem 0 3rem #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* img{
+    filter: drop-shadow(0 10px 8px rgba(255, 255, 255, 0.04)) drop-shadow(0 4px 3px rgba(255, 255, 255, 0.1));
+    background-color:#212428;
+    border-radius: 30px;
+    } */
+.card-list {
+    display: flex;
+    padding: 3rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-x: scroll;
+}
+
+.card-list::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+.card-list::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+
+.card {
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.about-me {
+    display: flex;
+    width: 100%;
+}
+
+.about-me-card {
+    height: 350px;
+    width: 80vw;
+    min-width: 300px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    transition: .2s;
+    margin: 2vw 10vw;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.card:focus-within~.card,
+.card:hover~.card {
+    transform: translateX(10px);
+}
+
+.card:hover {
+    transform: translateY(-1rem);
+}
+
+/* .card:not(:first-child) {
+    margin-left: -130px;
+} */
+
+
+.card-header {
+    margin-bottom: auto;
+}
+
+.card-header p {
+    font-size: 14px;
+    margin: 0 0 1rem;
+    color: #7a7a8c;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    margin: .25rem 0 auto;
+    text-decoration: none;
+    color: inherit;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.card-header h2:hover {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.card-author {
+    margin: 3rem 0 0;
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    align-items: center;
+    position: relative;
+}
+
+.author-avatar {
+    grid-area: auto;
+    align-self: start;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.author-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    display: block;
+    overflow: hidden;
+    margin: 16px 10px;
+}
+
+.author-name {
+    grid-area: auto;
+    box-sizing: border-box;
+}
+
+.author-name-prefix {
+    font-style: normal;
+    font-weight: 700;
+    color: #7a7a8c;
+}
+
+.half-circle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 8;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.tags {
+    margin: 1rem 0 2rem;
+    padding: .5rem 0 1rem;
+    line-height: 2;
+    margin-bottom: 0;
+}
+
+.tags a {
+    font-style: normal;
+    font-weight: 700;
+    font-size: .5rem;
+    color: #7a7a8c;
+    text-transform: uppercase;
+    font-size: .66rem;
+    border: 3px solid #28242f;
+    border-radius: 2rem;
+    padding: .2rem .85rem .25rem;
+    position: relative;
+}
+
+.tags a:hover {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    text-shadow: none;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-box-decoration-break: clone;
+    background-clip: text;
+    border-color: white;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+}
+
+.img-home {
+    justify-content: flex-start;
+}
+
+.welcome-message {
+    justify-content: center;
+}
+
+.about-tag {
+    color: #ff8a00;
+    margin-bottom: 0px;
+    margin-left: 100px;
+}
+
+
+.blog-tag {
+    color: #ff8a00;
+    margin-left: 50px;
+}
+
+.contact-tag {
+    color: #1e1e;
+    margin-left: 50px;
+}
+
+.about-tag:after {
+    content: "<about>"
+
+}
+
+
+.skills-tag:after {
+    content: "<skills>"
+}
+
+.blog-tag:after {
+    content: "<blog>"
+}
+
+.contact-tag:after {
+    content: "<contact>"
+}
+
+c .skills-section {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 80px;
+}
+
+.skills-tag {
+    color: #1e1e;
+    margin-left: 100px;
+    justify-content: flex-end;
+}
+
+
+/* .blog-section {
+    margin-left: 50px;
+
+} */
+
+.chart {
+    margin-bottom: 2rem;
+    width: 80vw;
+    margin-right: 10px;
+    justify-content: center;
+    width: 80vw;
+}
+
+.chart footer {
+    background-color: #373737;
+    height: 2px;
+    width: 80vw;
+}
+
+.chart span {
+    font-size: 18px;
+    margin-bottom: 7px;
+    display: block;
+    width: 80vw;
+}
+
+.chart-1 {
+    background: rgb(255, 34, 83);
+    width: 80vw;
+}
+
+.site-footer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.chart footer div {
+    height: 100%;
+    background-color: #08fdd8;
+    transition: width 1.3s ease-out;
+    width: 80vw;
+}
+
+.site-footer,
+.chart {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #ff8a00;
+}
+
+.contact-page {
+    display: flex;
+}
+
+.contact-item {
+    align-items: center;
+    justify-content: center;
+    flex-grow: inherit;
+}
+
+@media (max-width:481px) {
+    .img-home {
+        width: 100%;
+    }
+
+    .welcome-message {
+        width: 100%;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .img-home {
+        width: 100%;
+    }
+
+    .welcome-message {
+        width: 100%;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .img-home {
+        width: 50%;
+    }
+
+    .welcome-message {
+        width: 50%;
+    }
+
+
+
+    /* typing */
+    .welcome-message h1 {
+        overflow: hidden;
+        /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange;
+        /* The typwriter cursor */
+        white-space: nowrap;
+        /* Keeps the content on a single line */
+        margin: 0 auto;
+        /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em;
+        /* Adjust as needed */
+        animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+
+    /* form styling */
+
+    form {
+        margin: 10% auto 0 auto;
+        padding: 30px;
+        width: 400px;
+        height: auto;
+        overflow: hidden;
+        background: white;
+        border-radius: 10px;
+    }
+
+    .form-page {
+        margin: auto;
+        padding: auto;
+    }
+
+    form label {
+        font-size: 14px;
+        color: darkgray;
+        cursor: pointer;
+    }
+
+    form label,
+    form input {
+        /* float: left; */
+        clear: both;
+        width: 100%;
+    }
+
+    form input {
+        margin: 15px 0;
+        padding: 15px 10px;
+        width: 100%;
+        outline: none;
+        border: 1px solid #bbb;
+        border-radius: 20px;
+        display: inline-block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -ms-transition: 0.2s ease all;
+        -o-transition: 0.2s ease all;
+        transition: 0.2s ease all;
+    }
+
+    form input[type=text]:focus,
+    form input[type="password"]:focus {
+        border-color: cornflowerblue;
+    }
+
+    input[type=submit] {
+        padding: 15px 50px;
+        width: auto;
+        background: #485754;
+        border: none;
+        color: white;
+        cursor: pointer;
+        display: inline-block;
+        float: right;
+        clear: right;
+        -webkit-transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -ms-transition: 0.2s ease all;
+        -o-transition: 0.2s ease all;
+        transition: 0.2s ease all;
+    }
+
+    input[type=submit]:hover {
+        opacity: 0.8;
+    }
+
+    input[type="submit"]:active {
+        opacity: 0.4;
+    }
+
+    .forgot,
+    .register {
+        margin: 10px;
+        float: left;
+        clear: left;
+        display: inline-block;
+        color: cornflowerblue;
+        text-decoration: none;
+    }
+
+    .forgot:hover,
+    .register:hover {
+        color: darkgray;
+    }
+
+    #logo {
+        margin: 0 auto;
+        width: 200px;
+        font-family: 'Lily Script One', cursive;
+        font-size: 60px;
+        font-weight: bold;
+        text-align: center;
+        color: lightgray;
+        -webkit-transition: 0.2s ease all;
+        -moz-transition: 0.2s ease all;
+        -ms-transition: 0.2s ease all;
+        -o-transition: 0.2s ease all;
+        transition: 0.2s ease all;
+    }
+
+    .call-me {
+        margin-left: 30px;
+    }
+
+    .contact-page {
+        margin-left: 20vw;
+    }
+
+    #logo:hover {
+        color: cornflowerblue;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 90%
+        }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
