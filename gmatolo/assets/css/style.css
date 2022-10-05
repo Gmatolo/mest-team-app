@@ -14,11 +14,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: #1e1e;
+    background: #2d2838;
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #201c29;
+    background: #1e1e;
 }
 
 .navbar {
@@ -26,7 +26,7 @@ body::-webkit-scrollbar-thumb {
     padding: 0.5px;
     margin: 2px;
     border-radius: 10px;
-    background: #d4c9eb;
+    background: #1e1e;
     box-shadow: -1rem 0 3rem #000;
 }
 
@@ -286,7 +286,7 @@ c .skills-section {
 }
 
 .skills-tag {
-    color: #ff8a00;
+    color: #1e1e;
     margin-left: 100px;
     justify-content: flex-end;
 }
@@ -336,12 +336,23 @@ c .skills-section {
     width: 80vw;
 }
 
-.site-footer, .chart {
+.site-footer,
+.chart {
     display: table;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     color: #ff8a00;
+}
+
+.contact-page {
+    display: flex;
+}
+
+.contact-item {
+    align-items: center;
+    justify-content: center;
+    flex-grow: inherit;
 }
 
 @media (max-width:481px) {
@@ -377,4 +388,45 @@ c .skills-section {
         width: 50%;
     }
 
-}
+
+
+    /* typing */
+    .welcome-message h1 {
+        overflow: hidden;
+        /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange;
+        /* The typwriter cursor */
+        white-space: nowrap;
+        /* Keeps the content on a single line */
+        margin: 0 auto;
+        /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em;
+        /* Adjust as needed */
+        animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 90%
+        }
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
